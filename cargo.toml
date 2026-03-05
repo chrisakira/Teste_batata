@@ -1,0 +1,46 @@
+[package]
+name = "jarvis-assistant"
+version = "0.2.0"
+edition = "2021"
+
+[dependencies]
+# Audio capture
+cpal = "0.15"
+
+# Whisper speech-to-text
+whisper-rs = "0.12"
+
+# HTTP client for Ollama API and sensor API
+reqwest = { version = "0.12", features = ["json"] }
+
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# JSON handling
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Ring buffer for audio
+ringbuf = "0.4"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# For running Piper TTS as subprocess
+which = "7"
+
+# Error handling
+anyhow = "1"
+
+# ONNX Runtime for Silero VAD
+ort = { version = "2", features = ["download-binaries"] }
+
+# ndarray for tensor manipulation (VAD model I/O)
+ndarray = "0.16"
+
+# Chrono for timestamps in conversation memory
+chrono = { version = "0.4", features = ["serde"] }
+
+# UUID for conversation session IDs
+uuid = { version = "1", features = ["v4"] }
